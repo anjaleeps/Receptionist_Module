@@ -1,0 +1,6 @@
+node_modules/
+package-lock.json
+.env
+Doctor_Module/node_modules/
+Doctor_Module/package-lock.json
+Doctor_Module/.env

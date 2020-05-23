@@ -1,0 +1,134 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>Dashio - Bootstrap Admin Template</title>
+
+    <!-- Favicons -->
+    <link href="/img/favicon.png" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap-daterangepicker/daterangepicker.css" />
+
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/to-do.css">
+
+</head>
+
+<body>
+
+    <%- include ('../partials/header') %>
+    <%- include ('../partials/sidebar') %>
+
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row mt">
+                <div class="col-lg-12 ">
+                    <h4><i class="fa fa-angle-right"></i> New Diagnosis</h4>
+                    <div class="form-panel">
+                        <div class=" form mt">
+                            <form class="cmxform form-horizontal style-form" id="commentForm">
+
+                                <div class="form-group ">
+                                    <label for="cfirstname" class="control-label col-lg-2">First Name (required)</label>
+                                    <div class="col-lg-10">
+                                        <input class=" form-control" id="cfirstname" name="name" minlength="2"
+                                            type="text" required />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="clastname" class="control-label col-lg-2">Last Name (required)</label>
+                                    <div class="col-lg-10">
+                                        <input class=" form-control" id="clastname" name="name" minlength="2"
+                                            type="text" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Birth Date</label>
+                                    <div class="col-md-4 col-xs-11">
+                                        <div data-date-viewmode="years" data-date-format="yyyy-mm-dd"
+                                            data-date="2020-03-09" class="input-append date dpYears">
+                                            <input type="text" id="cbirthdate" readonly="" placeholder="2020-03-09" size="16"
+                                                class="form-control" required>
+                                            <span class="input-group-btn add-on">
+                                                <button class="btn btn-theme" type="button"><i
+                                                        class="fa fa-calendar"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="cphonenumber" class="control-label col-lg-2">Phone Number
+                                        (required)</label>
+                                    <div class="col-lg-10">
+                                        <input class=" form-control" id="cphonenumber" name="name" minlength="9"
+                                            maxlength="10" type="tel" required />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="cemail" class="control-label col-lg-2">Email (required)</label>
+                                    <div class="col-lg-10">
+                                        <input class=" form-control" id="cemail" name="name" minlength="2" type="email"
+                                            required />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="chousenumber" class="control-label col-lg-2">House Number
+                                        (required)</label>
+                                    <div class="col-lg-10">
+                                        <input class=" form-control" id="chousenumber" name="name" type="text"
+                                            required />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="cstreet" class="control-label col-lg-2">Street (required)</label>
+                                    <div class="col-lg-10">
+                                        <input class=" form-control" id="cstreet" name="name" minlength="2" type="text"
+                                            required />
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="ccity" class="control-label col-lg-2">City (required)</label>
+                                    <div class="col-lg-10">
+                                        <input class=" form-control" id="ccity" name="name" type="text" required />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-10">
+                                        <button id="submitButton" class="btn btn-theme" type="submit">Save</button>
+                                        <a href='/' class="btn btn-theme04">Cancel</a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <!-- /form-panel -->
+                </div>
+                <!-- /col-lg-12 -->
+            </div>
+        </section>
+
+        <%- include ('../partials/footer') %>
+        <script src="/lib/jquery-ui-1.9.2.custom.min.js"></script>
+        <script type="text/javascript" src="/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="/lib/bootstrap-daterangepicker/date.js"></script>
+        <script type="text/javascript" src="/lib/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script type="text/javascript" src="/lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src="/lib/bootstrap-daterangepicker/moment.min.js"></script>
+        <script type="text/javascript" src="/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+        <script src="/lib/advanced-form-components.js"></script>
+        <script src="/js/patientRegistration.js"></script>
+
+</body>
+
+</html>

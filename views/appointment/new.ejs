@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>Dashio - Bootstrap Admin Template</title>
+
+    <!-- Favicons -->
+    <link href="/img/favicon.png" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/lib/bootstrap-daterangepicker/daterangepicker.css" />
+
+
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/to-do.css">
+
+</head>
+
+<body>
+
+    <%- include ('../partials/header') %>
+    <%- include ('../partials/sidebar') %>
+
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row mt">
+                <div class="col-lg-12">
+                    <h4><i class="fa fa-angle-right"></i> New Appointment</h4>
+                    <div class="form-panel">
+                        <div class=" form">
+                            <form class="cmxform form-horizontal style-form" id="commentForm">
+                                <div class="form-group">
+                                    <label class="col-lg-2 col-sm-2 control-label">Patient ID</label>
+                                    <div class="col-lg-10">
+                                        <p class="form-control-static"><%= patient.patient_id %></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 col-sm-2 control-label">Patient Name</label>
+                                    <div class="col-lg-10">
+                                        <p class="form-control-static"><%= patient.patient_name %></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cdoctortype" class="control-label col-lg-2">Doctor Type</label>
+                                    <div class="col-lg-10">
+                                        <select class="form-control" id="cdoctortype">
+                                            <% doctorTypes.forEach(type => { %>
+                                            <option value=<%= `${type.doctor_type_id}` %>><%= type.doctor_type%>
+                                            </option>
+                                            <% }) %>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="mark"></div>
+                                <template id="doctorNameTemp">
+                                    <div class="form-group" id>
+                                        <label for="cdoctortype" class="control-label col-lg-2">Doctor Name</label>
+                                        <div class="col-lg-10">
+                                            <select class="form-control" id="cdoctor">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </template>
+                                <template id="sessionTemp">
+                                    <div class="form-group">
+                                        <label for="csession" class="control-label col-lg-2">Session</label>
+                                        <div class="col-lg-10" id="csession">
+                                        </div>
+                                    </div>
+                                </template>
+                                <div class="form-group" id="dateblock" style="display:none">
+                                    <label class="control-label col-md-2">Appointment Date</label>
+                                    <div class="col-md-4 col-xs-11">
+                                        <input class="form-control form-control-inline input-medium default-date-picker" id="cdate" size="16" type="text" value="">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h6>Select the session and the date and click on 'check availability' to
+                                                    get availability info.</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-theme02" id="dataButton" data-toggle="modal"
+                                            data-target="#myModal">Check Availability</button>
+
+                                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                                            aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog mt">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-hidden="true">&times;</button>
+                                                        <h4 class="modal-title" id="myModalLabel">Availability Info</h4>
+                                                    </div>
+                                                    <div class="modal-body" id="info">
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default"
+                                                            data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <template id="radioTemp">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionRadio">
+                                            <p id="text"></p>
+                                        </label>
+                                    </div>
+                                </template>
+
+
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-10">
+                                        <button id="nextButton" class="btn btn-theme" type="submit">Next</button>
+                                        <button id="cancelButton" class="btn btn-theme04">Cancel</button>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="patientId" value=<%= `${patient.patient_id}` %>
+
+                            </form>
+
+                        </div>
+                    </div>
+                    <!-- /form-panel -->
+                </div>
+                <!-- /col-lg-12 -->
+            </div>
+        </section>
+
+        <%- include ('../partials/footer') %>
+
+        <script type="text/javascript" src="/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="/lib/bootstrap-daterangepicker/date.js"></script>
+        <script type="text/javascript" src="/lib/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script type="text/javascript" src="/lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src="/lib/bootstrap-daterangepicker/moment.min.js"></script>
+        <script type="text/javascript" src="/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+        <script src="/lib/advanced-form-components.js"></script>
+        <script src="/js/appointment.js"></script>
+
+</body>
+
+</html>

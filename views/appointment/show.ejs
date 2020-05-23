@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>Dashio - Bootstrap Admin Template</title>
+
+    <!-- Favicons -->
+    <link href="/img/favicon.png" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/to-do.css">
+
+</head>
+
+<body>
+
+    <%- include ('../partials/header') %>
+    <%- include ('../partials/sidebar') %>
+
+    <section id="main-content">
+        <section class="wrapper">
+            <div class="row mt">
+                <div class="col-lg-12">
+                    <h4><i class="fa fa-angle-right"></i> Appointment Record</h4>
+                    <div class="form-panel">
+                        <div class=" form">
+                            <form class="cmxform form-horizontal style-form" id="commentForm">
+                                <div class="form-group">
+                                    <label class="col-lg-2 col-sm-2 control-label">Appointment ID</label>
+                                    <div class="col-lg-10">
+                                        <p class="form-control-static"><%= appointment.appointment_id %></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 col-sm-2 control-label">Patient Name</label>
+                                    <div class="col-lg-10">
+                                        <p class="form-control-static"><%= appointment.patient_name %></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 col-sm-2 control-label">Doctor Name</label>
+                                    <div class="col-lg-10">
+                                        <p class="form-control-static"><%= appointment.doctor_name %></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 col-sm-2 control-label">Date</label>
+                                    <div class="col-lg-10">
+                                        <p class="form-control-static"><%= appointment.date %></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 col-sm-2 control-label">Appointment Number</label>
+                                    <div class="col-lg-10">
+                                        <p class="form-control-static"><%= appointment.patient_number %></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 col-sm-2 control-label">Scheduled Time</label>
+                                    <div class="col-lg-10">
+                                        <p class="form-control-static"><%= appointment.scheduled_time%></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 col-sm-2 control-label">Session Duration</label>
+                                    <div class="col-lg-10">
+                                        <p class="form-control-static"><%=appointment.start_time%> - <%=appointment.end_time%></p>
+                                    </div>
+                                </div>
+                              
+
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /form-panel -->
+                </div>
+                <!-- /col-lg-12 -->
+            </div>
+        </section>
+
+        <%- include ('../partials/footer') %>
+
+</body>
+
+</html>
