@@ -9,20 +9,20 @@
     <title>Dashio - Bootstrap Admin Template</title>
 
     <!-- Favicons -->
-    <link href="/img/favicon.png" rel="icon">
-    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/receptionist/img/favicon.png" rel="icon">
+    <link href="/receptionist/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Bootstrap core CSS -->
-    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/receptionist/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--external css-->
-    <link href="/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="/lib/bootstrap-datepicker/css/datepicker.css" />
-    <link rel="stylesheet" type="text/css" href="/lib/bootstrap-daterangepicker/daterangepicker.css" />
+    <link href="/receptionist/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/receptionist/lib/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/receptionist/lib/bootstrap-daterangepicker/daterangepicker.css" />
 
     <!-- Custom styles for this template -->
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/style-responsive.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/to-do.css">
+    <link href="/receptionist/css/style.css" rel="stylesheet">
+    <link href="/receptionist/css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="/receptionist/css/to-do.css">
 
 </head>
 
@@ -107,7 +107,7 @@
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
                                         <button id="submitButton" class="btn btn-theme" type="submit">Save</button>
-                                        <a href=<%= `/patient/${patient.patient_id}` %> class="btn btn-theme04">Cancel</a>
+                                        <a href=<%= `/receptionist/patient/${patient.patient_id}` %> class="btn btn-theme04">Cancel</a>
                                     </div>
                                 </div>
                                 <input type="hidden" id="patientId" value="<%= patient.patient_id%>">
@@ -120,15 +120,15 @@
         </section>
 
         <%- include ('../partials/footer') %>
-        <script src="/lib/jquery-ui-1.9.2.custom.min.js"></script>
-        <script type="text/javascript" src="/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-        <script type="text/javascript" src="/lib/bootstrap-daterangepicker/date.js"></script>
-        <script type="text/javascript" src="/lib/bootstrap-daterangepicker/daterangepicker.js"></script>
-        <script type="text/javascript" src="/lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
-        <script type="text/javascript" src="/lib/bootstrap-daterangepicker/moment.min.js"></script>
-        <script type="text/javascript" src="/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
-        <script src="/lib/advanced-form-components.js"></script>
-        <script src="/js/patientEdit.js"></script>
+        <script src="/receptionist/lib/jquery-ui-1.9.2.custom.min.js"></script>
+        <script type="text/javascript" src="/receptionist/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="/receptionist/lib/bootstrap-daterangepicker/date.js"></script>
+        <script type="text/javascript" src="/receptionist/lib/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <script type="text/javascript" src="/receptionist/lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src="/receptionist/lib/bootstrap-daterangepicker/moment.min.js"></script>
+        <script type="text/javascript" src="/receptionist/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+        <script src="/receptionist/lib/advanced-form-components.js"></script>
+        <script src="/receptionist/js/patientEdit.js"></script>
 
 </body>
 

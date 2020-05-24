@@ -10,18 +10,18 @@
     <title>Dashio - Bootstrap Admin Template</title>
 
     <!-- Favicons -->
-    <link href="/img/favicon.png" rel="icon">
-    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/receptionist/img/favicon.png" rel="icon">
+    <link href="/receptionist/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Bootstrap core CSS -->
-    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/receptionist/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--external css-->
-    <link href="/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="/css/zabuto_calendar.css">
-    <link rel="stylesheet" type="text/css" href="/lib/gritter/css/jquery.gritter.css" />
+    <link href="/receptionist/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/receptionist/css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="/receptionist/lib/gritter/css/jquery.gritter.css" />
     <!-- Custom styles for this template -->
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/style-responsive.css" rel="stylesheet">
+    <link href="/receptionist/css/style.css" rel="stylesheet">
+    <link href="/receptionist/css/style-responsive.css" rel="stylesheet">
 
 
 </head>
@@ -93,7 +93,7 @@
                                             <td class="inbox-small-cells"><%= appointment.patient_id %></td>
                                             <td class="inbox-small-cells"></td>
                                             <td class="view-message  dont-show">
-                                                <a href=<%= `appointment/${appointment.appointment_id}` %>>
+                                                <a href=<%= `/receptionist/appointment/${appointment.appointment_id}` %>>
                                                     <%= appointment.patient_name %>
                                                 </a>
                                             </td>
@@ -112,7 +112,7 @@
         </section>
     </section>
     <%- include ('partials/footer') %>
-    <script src="/js/patientSearch.js"></script>
+    <script src="/receptionist/js/patientSearch.js"></script>
 </body>
 
 </html>
