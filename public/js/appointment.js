@@ -34,7 +34,7 @@ async function showDoctors(e) {
 
 async function getDoctorList(doctorType) {
     try {
-        let response = await fetch(`/doctor?doctorTypeId=${doctorType}`, { method: 'GET' })
+        let response = await fetch(`/receptionist/doctor?doctorTypeId=${doctorType}`, { method: 'GET' })
         let data = await response.json()
         return data
     }
@@ -77,7 +77,7 @@ async function showSessions(e) {
 
 async function getSessionList(doctorId) {
     try {
-        let response = await fetch(`/session?doctorId=${doctorId}`, { method: 'GET' })
+        let response = await fetch(`/receptionist/session?doctorId=${doctorId}`, { method: 'GET' })
         let data = await response.json()
         return data
     }
@@ -121,7 +121,7 @@ async function showSessionInfo(e) {
 
 async function getSessionInfo(date, sessionId) {
     try {
-        let response = await fetch(`/session/${sessionId}?date=${date}`, { method: 'GET' })
+        let response = await fetch(`/receptionist/session/${sessionId}?date=${date}`, { method: 'GET' })
         let data = await response.json()
         return data
     }
@@ -168,7 +168,7 @@ async function schedule(e) {
             if (response.ok) {
                 let data = await response.json()
                 let appointmentId = data.appointmentId
-                window.location.pathname = `/appointment/${appointmentId}`
+                window.location.pathname = `/receptionist/appointment/${appointmentId}`
             }
             else {
                 let errors = await response.json()
@@ -211,7 +211,7 @@ function showErrors(errors) {
 
 async function postAppointment(appointment) {
     try {
-        let response = await fetch('/appointment', {
+        let response = await fetch('/receptionist/appointment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

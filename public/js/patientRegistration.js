@@ -18,7 +18,7 @@ async function registerPatient(e) {
         if (response.ok) {
             let data = await response.json()
             let patientId = data.patientId
-            window.location.pathname = '/patient/' + patientId
+            window.location.pathname = '/receptionist/patient/' + patientId
             return
         }
         let errors= await response.json()
@@ -59,7 +59,7 @@ function showErrors(errors){
 
 async function sendPatientData(formData) {
     try {
-        let response = await fetch('/patient/', {
+        let response = await fetch('/receptionist/patient/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

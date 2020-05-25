@@ -9,7 +9,7 @@ function searchPatient(e) {
         input = '0' + input
     }
     if (validateInput(input)) {
-        window.location.pathname = "/patient/search/" + input
+        window.location.pathname = "/receptionist/patient/search/" + input
     }
 }
 
