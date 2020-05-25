@@ -5,8 +5,8 @@ function Session(){
 }
 
 Session.prototype.findAllByDoctor = async function (doctorId){
-    let query = "SELECT session_id, doctor_id, day, to_char(start_time, 'HH:MI') as start_time, \
-        to_char(end_time, 'HH:MI') as end_time FROM session WHERE doctor_id = $1"
+    let query = "SELECT session_id, doctor_id, day, to_char(start_time, 'HH24:MI') as start_time, \
+        to_char(end_time, 'HH24:MI') as end_time FROM session WHERE doctor_id = $1"
     try{
         let result = await db.any(query, doctorId)
         console.log(result)
@@ -31,7 +31,7 @@ Session.prototype.findOneById = async function(sessionId){
 }
 
 Session.prototype.findOne = async function(sessionId){
-    let query = "select to_char(start_time, 'HH:MI') as start_time, to_char(end_time, 'HH:MI') as end_time, day from session where session_id=$1"
+    let query = "select to_char(start_time, 'HH24:MI') as start_time, to_char(end_time, 'HH24:MI') as end_time, day from session where session_id=$1"
 
     try{
         let result = await db.oneOrNone(query, sessionId)
