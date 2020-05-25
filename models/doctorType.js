@@ -4,10 +4,10 @@ function DoctorType(){
 
 }
 
-DoctorType.prototype.findAll = function (){
+DoctorType.prototype.findAll = async function (){
     let query = "SELECT * FROM doctor_type"
     try{
-        let result = db.any(query)
+        let result = await db.any(query)
         return result
     }
     catch(err){

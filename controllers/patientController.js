@@ -27,7 +27,7 @@ exports.findPatientByPhoneNumber = function (req, res) {
                 res.redirect(`/receptionist/patient/${patientData.patient_id}`)
             }
             else {
-                res.render('patient/new')
+                res.redirect('/receptionist/patient/new')
             }
         })
         .catch(err => {
