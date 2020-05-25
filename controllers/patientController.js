@@ -24,7 +24,7 @@ exports.findPatientByPhoneNumber = function (req, res) {
         .then(patientData => {
             console.log(patientData)
             if (patientData) {
-                res.redirect(`/patient/${patientData.patient_id}`)
+                res.redirect(`/receptionist/patient/${patientData.patient_id}`)
             }
             else {
                 res.render('patient/new')
