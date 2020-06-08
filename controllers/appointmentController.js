@@ -40,10 +40,10 @@ exports.sendForm = async function (req, res) {
         try {
             if (patientData) {
                 let doctorTypes = await doctorType.findAll()
-                res.render('appointment/new', { patient: patientData, doctorTypes: doctorTypes })
+                res.render('appointment/new', { user: req.user, patient: patientData, doctorTypes: doctorTypes })
             }
             else {
-                res.render('patient/new')
+                res.render('patient/new', {user: req.user})
             }
         }
         catch (err) {
@@ -92,7 +92,7 @@ exports.getAppointment = function (req, res) {
     appointment.findOneById(appointmentId)
         .then(appointmentData => {
             if (appointmentData) {
-                res.render('appointment/show', { appointment: appointmentData })
+                res.render('appointment/show', { user: req.user, appointment: appointmentData })
             }
             else {
                 res.render('error/404')
@@ -108,7 +108,7 @@ exports.sendHome = async function (req, res) {
     let appointment = new Appointment()
     try {
         let appointmentData = await appointment.findAll()
-        res.render('home', { appointments: appointmentData })
+        res.render('home', { user: req.user, appointments: appointmentData })
     }
     catch (err) {
         console.log(err)

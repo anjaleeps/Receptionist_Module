@@ -61,6 +61,7 @@ async function sendPatientData(formData) {
     try {
         let response = await fetch('/receptionist/patient/', {
             method: 'POST',
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
             },

@@ -34,7 +34,10 @@ async function showDoctors(e) {
 
 async function getDoctorList(doctorType) {
     try {
-        let response = await fetch(`/receptionist/doctor?doctorTypeId=${doctorType}`, { method: 'GET' })
+        let response = await fetch(`/receptionist/doctor?doctorTypeId=${doctorType}`, { 
+            method: 'GET', 
+            credentials: 'include'
+        })
         let data = await response.json()
         return data
     }
@@ -77,7 +80,10 @@ async function showSessions(e) {
 
 async function getSessionList(doctorId) {
     try {
-        let response = await fetch(`/receptionist/session?doctorId=${doctorId}`, { method: 'GET' })
+        let response = await fetch(`/receptionist/session?doctorId=${doctorId}`, { 
+            method: 'GET',
+            credentials: 'include' 
+        })
         let data = await response.json()
         return data
     }
@@ -121,7 +127,10 @@ async function showSessionInfo(e) {
 
 async function getSessionInfo(date, sessionId) {
     try {
-        let response = await fetch(`/receptionist/session/${sessionId}?date=${date}`, { method: 'GET' })
+        let response = await fetch(`/receptionist/session/${sessionId}?date=${date}`, { 
+            method: 'GET',
+            credentials:'include'
+        })
         let data = await response.json()
         return data
     }
@@ -213,6 +222,7 @@ async function postAppointment(appointment) {
     try {
         let response = await fetch('/receptionist/appointment', {
             method: 'POST',
+            credentials:'include',
             headers: {
                 'Content-Type': 'application/json'
             },

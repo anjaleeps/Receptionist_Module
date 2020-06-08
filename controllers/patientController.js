@@ -6,7 +6,7 @@ exports.findPatientById = function (req, res) {
     patient.findOneById(req.params.patientId)
         .then(patientData => {
             if (patientData) {
-                res.render('patient/show', { patient: patientData })
+                res.render('patient/show', { user: req.user, patient: patientData })
             }
             else {
                 res.render('error/404')
@@ -91,7 +91,7 @@ exports.getEditForm = async function (req, res) {
     try {
         let patientData = await patient.findOne(patientId)
         if (patientData) {
-            res.render('patient/edit', { patient: patientData })
+            res.render('patient/edit', { user: req.user, patient: patientData })
         }
         else {
             res.render('error/404')
