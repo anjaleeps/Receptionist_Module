@@ -5,7 +5,7 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/new', (req, res) => {
-    res.render('patient/new');
+    res.render('patient/new', {user: req.user});
 })
 router.post('/', patientValidationRules(), validate, patientController.registerPatient)
 
